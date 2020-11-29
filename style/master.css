@@ -2,6 +2,7 @@
 font-family: sans-serif;}
 a{text-decoration: none;color:black;}
 ul{list-style: none;}
+input[type=checkbox]{display: none;}
 :root{
       --main-color:#FD8469;
       --secound-color:#373737;
@@ -41,7 +42,7 @@ justify-content: space-between;
 list-style: none;
 align-items: center;
 }
-#header nav > ul li:nth-of-type(1) span{
+#header nav > ul li:nth-of-type(1) .buttonArrows span{
   display: block;
   height:4px;
   width:30px;
@@ -69,13 +70,63 @@ align-items: center;
   background:var(--secound-color);
 }
 /**   --nav slider show ----------******************************/
-.panneuOption{
+#panneuOption{
   position: absolute;
   width:100%;
-  background: red;
-  left:0;
-  height:100vh;
+  left:-100%;
+  top:0;
   z-index:10;
+  display: flex;
+  flex-wrap: nowrap;
+  padding:0.5em 0;
+}
+#panneuOption ul{
+  width:90%;
+    height:100vh;
+      background: white;
+}
+#panneuOption ul li{
+  color:var(--secound-color);
+  border-bottom: 1px solid var(--secound-color);
+  width:100%;
+
+}
+#panneuOption ul li:hover{
+  background: #ECECEC;
+}
+#panneuOption ul li a{
+    display: block;
+    padding:0.9em 0.5em;
+    font-size: 1em;
+    font-weight: 510;
+}
+#panneuOption ul li a:hover{
+  color:var(--main-color);
+}
+#panneuOption .buttonClose{
+  width:10%;
+}
+#panneuOption .buttonClose label >span {
+  background: white;
+  width:100%;
+  display:inline-block;
+padding: 0.5em;
+}
+#panneuOption .buttonClose label >span span{
+  display: block;
+  height:2px;
+  width:35px;
+  background: black;
+}
+#panneuOption .buttonClose label >span span:nth-of-type(1){
+  transform: rotate(45deg);
+}
+#panneuOption .buttonClose label >span span:nth-of-type(2){
+  transform: rotate(-45deg);
+
+}
+#header nav > ul li:nth-of-type(1) input[type=checkbox]:checked + #panneuOption{
+  left:0;
 }
 /*Fin header*/
 /*section main*/
