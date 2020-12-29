@@ -13,7 +13,7 @@ input[type=checkbox]{display: none;}
   margin: auto;
 }
 body{
-  height:1500px;
+  height:5500px;
 }
 /*button buy*/
 .button{
@@ -71,15 +71,27 @@ align-items: center;
 }
 /**   --nav slider show ----------******************************/
 #panneuOption{
-  position: absolute;
+  position: fixed;
   width:100%;
   left:-100%;
   top:0;
   z-index:10;
   display: flex;
   flex-wrap: nowrap;
-  padding:0.5em 0;
+  padding: 0;
+  transition: 1s opacity;
+
 }
+#panneuOption:before{
+  content: "ee";
+  background: black;
+  width:100%;
+  position: absolute;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0.3;
+}
+
 #panneuOption ul{
   width:90%;
     height:100vh;
@@ -110,7 +122,7 @@ align-items: center;
   background: white;
   width:100%;
   display:inline-block;
-padding: 0.5em;
+padding: 1em;
 }
 #panneuOption .buttonClose label >span span{
   display: block;
@@ -130,6 +142,9 @@ padding: 0.5em;
 }
 /*Fin header*/
 /*section main*/
+#sectionMain {
+  height:100vh;
+}
 #sectionMain .sliderShow{
   position: relative;
 }
@@ -214,3 +229,189 @@ transform: rotate(-45deg);
 #Arrow div:nth-of-type(2){
   right:0px;
 }
+/**section shoppingsection**/
+      /*********item style************/
+      /******background id backgroundsectionmain*******/
+          #bgrSctShopping{
+            width:100%;
+            height: 100vh;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+          /*******information id ********/
+          #infoStyle *{
+            margin:10px 0;
+          }
+          #infoStyle h3{
+              position: relative;
+          }
+          #infoStyle h3:after{
+            content:"";
+            position: absolute;
+            width:50px;
+            height: 1px;
+            background: var(--main-color);
+            top:50%;
+          }
+          #infoStyle h1{
+            color:var(--main-color);
+          }
+          #infoStyle p{
+            line-height: 1.4em;
+          }
+
+#shoppingsection{ }
+#shoppingsection .items .item:nth-of-type(1){
+  margin-bottom: 7em;
+}
+
+#shoppingsection .items .item:nth-of-type(1) .backgorund .photo{
+  background-image: url("../img/1.jpg");
+}
+#shoppingsection .items .item:nth-of-type(2) .backgorund .photo{
+    background-image: url("../img/2.jpg");
+}
+/***Fin section shoppingsection***/
+/*************************************************/
+/***section info tech device****/
+#InTchDvc{
+  padding-top:1em;
+  background:var(--main-color);
+}
+#InTchDvc .spcFtr .Feature *{
+  margin:1.6em 0;
+}
+#InTchDvc .spcFtr .Feature h4{
+  position: relative;
+  color:white;
+}
+#InTchDvc .spcFtr .Feature h4:after{
+  content:"";
+  position: absolute;
+  top:50%;
+  height:1px;
+  width:40px;
+  background: white;
+}
+#InTchDvc .spcFtr .Feature ul li{
+  font-size:1.5em;
+  color:white;
+}
+#InTchDvc .spcFtr .Feature ul li span{
+  width:25px;
+  height:25px;
+  background:white;
+  margin:0 0.5em;
+  display: inline-block;
+}
+#InTchDvc .spcFtr .Feature .button {background: black;}
+/**FIN section info tech device**/
+/*section feedback*/
+#FdBck {
+padding:1em 0;
+}
+#FdBck .FdBckMain {
+  text-align: center;
+}
+#FdBck .FdBckMain .Title > *{
+  margin:2em 0;
+}
+#FdBck .FdBckMain .Title span{
+  display: block;
+  height:1px;
+  width:60px;
+  background: var(--main-color);
+  margin:auto;
+}
+#FdBck .FdBckMain .Title h1{
+  color:var(--main-color);
+}
+#FdBck .FdBckMain .items .item .ScPhoto{
+  display: block;
+  width:100%;
+
+}
+#FdBck .FdBckMain .items .item .ScPhoto .photo{
+border-radius: 50%;
+background: black;
+height:100px;
+width:100px;
+margin: auto;
+}
+/*Fin section feedback*/
+/*sectionvideo**/
+#SectionVideo{
+  height: 60vh;
+  background: #212526;
+  text-align: center;
+  margin:2em 0;
+}
+#SectionVideo .VideoInfo *{
+  margin: 1em 0;
+}
+#SectionVideo .VideoInfo h3{
+  color:var(--main-color);
+}
+#SectionVideo .VideoInfo p{
+color: white;
+
+}
+
+/*FIN sectionvideo**/
+/*section Perfrmance*/
+#SectionPerformance .perfrmanceInfo{
+  text-align: center;
+}
+#SectionPerformance .perfrmanceInfo h1{
+  color:var(--main-color):
+}
+/*FIN section Perfrmance*/
+/*section perfrmance*/
+#SectionPerformance .perfrmanceInfo{
+  text-align: center;
+}
+#SectionPerformance .perfrmanceInfo > *{
+  margin:0.4em 0;
+}
+
+#SectionPerformance .perfrmanceInfo span{
+display: inline-block;
+height:1px;
+width:60px;
+background:var(--main-color);
+}
+#SectionPerformance .perfrmanceInfo h1 {
+  color:var(--main-color);
+}
+#SectionPerformance .items{
+  display: flex;
+  flex-wrap: wrap;
+}
+#SectionPerformance .items .item{
+width:90%;
+margin:auto;
+}
+#SectionPerformance .items .item .background{
+  border-radius: 10px;
+  height:200px;
+  width:100%;
+  background:black;
+  position: relative;
+}
+#SectionPerformance .items .item .background:hover:after{
+  content: "";
+background:var(--main-color);
+opacity: 0.7;
+width:100%;
+height:200px;
+position:absolute;
+top:0;
+}
+#SectionPerformance .items .item .infoItem > *{
+  margin:.5em 0;
+}
+#SectionPerformance .items .item .infoItem a:hover{
+  color:var(--main-color);
+}
+/*FIN section perfrmance*/
