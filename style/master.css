@@ -411,7 +411,58 @@ top:0;
 #SectionPerformance .items .item .infoItem > *{
   margin:.5em 0;
 }
-#SectionPerformance .items .item .infoItem a:hove,#SectionPerformance .items .item .infoItem .button a:hover{
+#SectionPerformance .items .item .infoItem > a:hover{
   color:var(--main-color);
 }
+#SectionPerformance .items .item .infoItem .button:hover{
+  background:var(--main-color);
+}
+#SectionPerformance .items .item .infoItem .button:hover a{
+  color:var(--secound-color);
+}
+
 /*FIN section perfrmance*/
+
+/*footer */
+footer{
+  height:100vh;
+  background: var(--secound-color);
+  text-align: center;
+  font-size: 1rem;
+}
+footer #logo a span[class="header_title"]{
+color:white;
+}
+hr{
+  width:90%;
+  margin: auto;
+  background-color:var(--test-color);
+  height:1px;
+  border:none;
+}
+footer > *{
+  display: block;
+  width:100%;
+  height:calc(100vh/8);
+
+  padding:calc(100vh/8) 0em 0em 0em;
+  font-size: 1.3em;
+
+}
+footer > h3{
+  color:white;
+
+}
+footer > form input{
+  border:none;
+  border-radius: 10px;
+  color:var(--secound-color);
+}
+footer > form
+footer > form >*{
+  padding: 1em 0.6em;
+}
+
+
+
+/**FIN Footeer*****/
