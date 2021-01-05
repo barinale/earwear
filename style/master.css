@@ -1,5 +1,7 @@
+/**foont */
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
 *{padding:0;margin:0;box-sizing: border-box;
-font-family: sans-serif;}
+font-family: 'Yanone Kaffeesatz', sans-serif;;}
 a{text-decoration: none;color:black;}
 ul{list-style: none;}
 input[type=checkbox]{display: none;}
@@ -32,6 +34,7 @@ body{
   background:white;
   padding:0.5em 1em;
   position: relative;
+  font-size: 1.4rem;
 }
 #header nav {
   padding:1em 0.2em;
@@ -46,6 +49,7 @@ align-items: center;
   display: block;
   height:4px;
   width:30px;
+  border-radius: 2px;
   background: var(--secound-color);
   margin:0.2em;
 }
@@ -73,7 +77,7 @@ align-items: center;
 #panneuOption{
   position: fixed;
   width:100%;
-  left:-100%;
+  left:-110%;
   top:0;
   z-index:10;
   display: flex;
@@ -146,22 +150,28 @@ padding: 1em;
   height:100vh;
 }
 #sectionMain .sliderShow{
-  position: relative;
+
 }
 #sectionMain .slider{
-  display: flex;
-  position: relative;
-height:auto;
+  height:auto;
+  width: auto;
+  white-space: nowrap;
+
   }
+#sectionMain .sliders{
+    width:100%;
+    display: inline-block;
+    white-space: normal;
+
+}
+
 #sectionMain .sliders .backgroundPhoto{
     height:550px;
-    width: 500px;
+    width: 100%;
     background:var(--test-color);
-    margin:15px 15px;
 }
 #sectionMain .slider .sliders{
   position:relative;
-
 }
 #sectionMain .slider .sliders .mainArticle{
   position: absolute;
@@ -428,7 +438,8 @@ footer{
   height:100vh;
   background: var(--secound-color);
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.3rem;
+  color:white;
 }
 footer #logo a span[class="header_title"]{
 color:white;
@@ -443,26 +454,54 @@ hr{
 footer > *{
   display: block;
   width:100%;
-  height:calc(100vh/8);
-
+  height:calc(100vh/6);
   padding:calc(100vh/8) 0em 0em 0em;
   font-size: 1.3em;
 
 }
-footer > h3{
-  color:white;
 
-}
 footer > form input{
   border:none;
   border-radius: 10px;
   color:var(--secound-color);
 }
-footer > form
+footer > form input{
+  width:80%;
+  margin: 0 0 10px 0
+}
+footer > form button{
+  width:30%;
+  border-radius: 35px;
+  background:var(--main-color);
+  border:none;
+  color:white;
+  font-size: .7em;
+}
+footer form{
+  margin:16px 0;
+}
 footer > form >*{
   padding: 1em 0.6em;
 }
 
+footer ul:nth-of-type(1){
 
 
+}
+footer ul:nth-of-type(1) li{
+  height:30px;
+  width:30px;
+  background:var(--main-color);
+  display: inline-block;
+}
+footer ul:nth-of-type(1) li:hover{
+  background:white;
+}
+footer ul:nth-of-type(2) li{
+  display: inline-block;
+  padding:0 0.6em;
+}
+footer ul:nth-of-type(2) li:not(li:last-child){
+  border-right:1px solid white;
+}
 /**FIN Footeer*****/
