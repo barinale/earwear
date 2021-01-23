@@ -45,7 +45,7 @@ justify-content: space-between;
 list-style: none;
 align-items: center;
 }
-#header nav > ul li:nth-of-type(1) .buttonArrows span{
+#header nav > ul >li:nth-of-type(1) .buttonArrows span{
   display: block;
   height:4px;
   width:30px;
@@ -53,13 +53,13 @@ align-items: center;
   background: var(--secound-color);
   margin:0.2em;
 }
-#header nav >ul li:nth-of-type(2) h1,#logo h1{
+#header nav >ul >li:nth-of-type(2) h1,#logo h1{
   color:var(--main-color);
   font-size: 2em;
   text-transform: uppercase;
 }
 
-#header nav >ul li:nth-of-type(2) a,#logo a{
+#header nav >ul >li:nth-of-type(2) a,#logo a{
   color:var(--secound-color);
 }
 #header nav >ul li:nth-of-type(2) a span:not(.header_title),#logo a span:not(.header_title){
@@ -68,11 +68,31 @@ align-items: center;
   width:20px;
   background:var(--main-color);
 }
-#header nav > ul li:nth-of-type(3) img{
+#header nav > ul> li:nth-of-type(3) img{
   height:30px;
   width:30px;
   background:var(--secound-color);
 }
+/*for panel item*/
+#header nav > ul >li:nth-child(3){
+
+}
+#itemPanel{
+position: absolute;
+width:70%;
+height:100vh;
+left:0;
+z-index: 15;
+background: white;
+}
+#itemPanel div{
+
+
+
+}
+
+
+/*FIN for panel item*/
 /**   --nav slider show ----------******************************/
 #panneuOption{
   position: fixed;
@@ -103,9 +123,7 @@ align-items: center;
 }
 #panneuOption ul li{
   color:var(--secound-color);
-  border-bottom: 1px solid var(--secound-color);
   width:100%;
-
 }
 #panneuOption ul li:hover{
   background: #ECECEC;
@@ -119,28 +137,48 @@ align-items: center;
 #panneuOption ul li a:hover{
   color:var(--main-color);
 }
+#panneuOption ul hr{
+  border:none;
+  background:black;
+  height: 1px;
+  opacity: 0.1;
+  width: 100%;
+}
+#panneuOption ul li form{
+  width: 100%;
+  position: relative;
+}
+
+#panneuOption ul li form input[type="text"]{
+  width:90%;
+  border:none;
+padding:0.9em 0.5em;
+font-size: 1em;
+font-weight: 100;
+opacity: 0.7;
+}
+#panneuOption ul li form button{
+  width:9%;
+  height: 100%;
+  padding:0.9em 0.5em;
+  background: var(--main-color);
+  border: none;
+  font-size: 1em;
+  position: absolute;
+  right:0;
+}
 #panneuOption .buttonClose{
   width:10%;
 }
-#panneuOption .buttonClose label >span {
-  background: white;
-  width:100%;
-  display:inline-block;
-padding: 1em;
-}
-#panneuOption .buttonClose label >span span{
-  display: block;
-  height:2px;
-  width:35px;
-  background: black;
-}
-#panneuOption .buttonClose label >span span:nth-of-type(1){
-  transform: rotate(45deg);
-}
-#panneuOption .buttonClose label >span span:nth-of-type(2){
-  transform: rotate(-45deg);
 
+#panneuOption .buttonClose label >span {
+  display: inline-block;
+  height:50px;
+  width:50px;
+  background: var(--main-color);
 }
+
+
 #header nav > ul li:nth-of-type(1) input[type=checkbox]:checked + #panneuOption{
   left:0;
 }
@@ -444,7 +482,7 @@ footer{
 footer #logo a span[class="header_title"]{
 color:white;
 }
-hr{
+footer hr{
   width:90%;
   margin: auto;
   background-color:var(--test-color);
@@ -503,5 +541,9 @@ footer ul:nth-of-type(2) li{
 }
 footer ul:nth-of-type(2) li:not(li:last-child){
   border-right:1px solid white;
+}
+footer .copyright span:nth-of-type(2) ,footer .copyright span:nth-of-type(3){
+display: inline-block;
+margin-top: 15px;
 }
 /**FIN Footeer*****/
