@@ -81,19 +81,42 @@ align-items: center;
 position: absolute;
 width:70%;
 height:100vh;
-left:0;
+right:0;
 z-index: 15;
 background: white;
+padding:0 0.6em;
 }
-#itemPanel div{
-
-
-
+#itemPanel .shppoingcard{
+text-align: center;
 }
-
-
+#itemPanel .shppoingcard > *{
+padding:0.6em 0em;
+}
+#itemPanel .shppoingcard div:nth-of-type(1){
+  text-align: right;
+}
+#itemPanel .shppoingcard h2{
+  color:var(--main-color);
+  text-transform: uppercase;
+  text-align: left;
+}
+#itemPanel .shppoingcard div:nth-of-type(2) hr{
+  border:none;
+  margin: auto;
+  width:100%;
+  height:1px;
+  background:black;
+  opacity: 0.3;
+}
+#itemPanel .shppoingcard div:nth-of-type(3) {
+padding: 0.5em;
+}
+#itemPanel .shppoingcard div:nth-of-type(3) a{
+  font-weight: 100;
+}
 /*FIN for panel item*/
 /**   --nav slider show ----------******************************/
+
 #panneuOption{
   position: fixed;
   width:100%;
