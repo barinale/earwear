@@ -16,6 +16,7 @@ input[type=checkbox]{display: none;}
 }
 body{
   height:5500px;
+  overflow-x:hidden;
 }
 /*button buy*/
 .button{
@@ -74,6 +75,9 @@ align-items: center;
   background:var(--secound-color);
 }
 /*for panel item*/
+#header nav > ul >li:nth-child(3) > div img{
+  cursor: pointer;
+}
 #header nav > ul >li:nth-child(3){
 
 }
@@ -81,10 +85,13 @@ align-items: center;
 position: absolute;
 width:70%;
 height:100vh;
-right:0;
+right:-100%;
+top:0;
 z-index: 15;
 background: white;
 padding:0 0.6em;
+transition: all 1s;
+opacity: 0;
 }
 #itemPanel .shppoingcard{
 text-align: center;
@@ -114,19 +121,28 @@ padding: 0.5em;
 #itemPanel .shppoingcard div:nth-of-type(3) a{
   font-weight: 100;
 }
+#itemPanel label span:hover{
+  color:var(--main-color);
+}
+#header nav > ul >li:nth-child(3) input[id="itemPanelin"]:checked + #itemPanel{
+  right:0;
+  position: fixed;
+  top:0;
+opacity: 1;
+}
 /*FIN for panel item*/
 /**   --nav slider show ----------******************************/
 
 #panneuOption{
   position: fixed;
   width:100%;
-  left:-110%;
+  right:-110%;
   top:0;
   z-index:10;
   display: flex;
   flex-wrap: nowrap;
   padding: 0;
-  transition: 1s opacity;
+  transition: 0.9s all;
 
 }
 #panneuOption:before{
@@ -136,7 +152,9 @@ padding: 0.5em;
   position: absolute;
   height: 100vh;
   z-index: -1;
-  opacity: 0.3;
+  opacity: 0;
+    transition: 1s all;
+
 }
 
 #panneuOption ul{
@@ -202,13 +220,20 @@ opacity: 0.7;
 }
 
 
-#header nav > ul li:nth-of-type(1) input[type=checkbox]:checked + #panneuOption{
+#header nav > ul >li:nth-of-type(1) input[id="nav"]:checked + #panneuOption{
   left:0;
+}
+#header nav > ul >li:nth-of-type(1) input[id="nav"]:checked + #panneuOption:before{
+  content:"";
+
+  opacity:0.3;
+
 }
 /*Fin header*/
 /*section main*/
 #sectionMain {
   height:100vh;
+    position: relative;
 }
 #sectionMain .sliderShow{
 
@@ -216,13 +241,15 @@ opacity: 0.7;
 #sectionMain .slider{
   height:auto;
   width: auto;
-  white-space: nowrap;
+ /*white-space: nowrap;*/
 
   }
 #sectionMain .sliders{
     width:100%;
     display: inline-block;
     white-space: normal;
+  position: absolute;
+    left:0%;
 
 }
 
@@ -231,9 +258,7 @@ opacity: 0.7;
     width: 100%;
     background:var(--test-color);
 }
-#sectionMain .slider .sliders{
-  position:relative;
-}
+
 #sectionMain .slider .sliders .mainArticle{
   position: absolute;
   top:20%;
@@ -261,10 +286,28 @@ opacity: 0.7;
   top:50%;
   right:50px;
 }
+
 #sectionMain .slider .sliders .mainArticle h2{
   color:var(--main-color);
   font-weight: 500;
+
 }
+#sectionMain .slider .sliders .mainArticle h3,#sectionMain .slider .sliders .mainArticle p{
+    animation: title 1s;
+}
+#sectionMain .slider .sliders .mainArticle h2{
+  animation: title1 1s;
+}
+@keyframes title1 {
+  0%{position: relative;;left:-100%;}
+  100%{position: relative;left:0%;}
+
+}
+@keyframes title {
+  0%{opacity:0;transform: scale(0);}
+  100%{opacity:1;transform: scale(1);}
+}
+
 #Arrow{
 
 }
