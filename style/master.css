@@ -510,22 +510,34 @@ margin: auto;
 /*Fin section feedback*/
 /*sectionvideo**/
 #SectionVideo{
-  height: 60vh;
+
   background: #212526;
   text-align: center;
   margin:2em 0;
+  overflow: hidden;
 }
 #SectionVideo .VideoInfo *{
   margin: 1em 0;
+}
+#SectionVideo .VideoInfo{
+  position: relative;
+}
+
+#SectionVideo .VideoInfo .text{
+  position: absolute;
+  top:10%;
+  left:50%;
+  transform: translateX(-50%);
 }
 #SectionVideo .VideoInfo h3{
   color:var(--main-color);
 }
 #SectionVideo .VideoInfo p{
 color: white;
-
 }
-
+#SectionVideo .VideoInfo img{
+  width:100%;
+}
 /*FIN sectionvideo**/
 /*section Perfrmance*/
 #SectionPerformance .perfrmanceInfo{
@@ -561,12 +573,19 @@ width:90%;
 margin:auto;
 }
 #SectionPerformance .items .item .background{
+  overflow: hidden;
   border-radius: 10px;
   height:200px;
   width:100%;
   background:black;
   position: relative;
 }
+#SectionPerformance .items .item .background img{
+height:100%;
+width: 100%;
+
+}
+
 #SectionPerformance .items .item .background:hover:after{
   content: "";
 background:var(--main-color);
