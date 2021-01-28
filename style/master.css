@@ -16,7 +16,7 @@ input[type=checkbox]{display: none;}
 }
 body{
   height:5500px;
-  overflow-x:hidden;
+
 }
 /*button buy*/
 .button{
@@ -400,6 +400,26 @@ transform: rotate(-45deg);
 #InTchDvc{
   padding-top:1em;
   background:var(--main-color);
+  overflow: hidden;
+}
+#InTchDvc .mainBackground{
+  overflow: hidden;
+}
+#InTchDvc .mainBackground .photo{
+border-radius: 100px;
+transform: rotate(45deg);
+overflow: hidden;
+height:140vh;
+position: relative;
+left:-40%;
+}
+#InTchDvc .mainBackground .photo img{
+width:100%;
+transform: rotate(-45deg);
+position: absolute;
+left:20%;
+top:-20%;
+height:160vh;
 }
 #InTchDvc .spcFtr .Feature *{
   margin:1.6em 0;
@@ -419,13 +439,15 @@ transform: rotate(-45deg);
 #InTchDvc .spcFtr .Feature ul li{
   font-size:1.5em;
   color:white;
+  display: block;
+  display: flex;
+flex-direction: row;
 }
-#InTchDvc .spcFtr .Feature ul li span{
+
+#InTchDvc .spcFtr .Feature ul li  img{
+  margin:0 10px;
   width:25px;
   height:25px;
-  background:white;
-  margin:0 0.5em;
-  display: inline-block;
 }
 #InTchDvc .spcFtr .Feature .button {background: black;}
 /**FIN section info tech device**/
@@ -435,6 +457,7 @@ padding:1em 0;
 }
 #FdBck .FdBckMain {
   text-align: center;
+
 }
 #FdBck .FdBckMain .Title > *{
   margin:2em 0;
@@ -449,6 +472,23 @@ padding:1em 0;
 #FdBck .FdBckMain .Title h1{
   color:var(--main-color);
 }
+
+#FdBck .FdBckMain .itemsblock{
+  position: relative;
+
+
+}
+#FdBck .FdBckMain .items{
+  position: relative;
+
+
+}
+#FdBck .FdBckMain .items .item{
+  display:inline-block;
+  width: 100%;
+
+
+}
 #FdBck .FdBckMain .items .item .ScPhoto{
   display: block;
   width:100%;
@@ -460,6 +500,12 @@ background: black;
 height:100px;
 width:100px;
 margin: auto;
+}
+#FdBck .FdBckMain .controllButton span{
+  height:20px;
+  width:20px;
+  display: inline-block;
+  background: var(--secound-color);
 }
 /*Fin section feedback*/
 /*sectionvideo**/

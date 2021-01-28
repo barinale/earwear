@@ -47,3 +47,45 @@ if(e.target.classList[1]=="right"||e.target.classList[0]=="RightArrow"){
   slid.left();
 }
 })
+/**slider with button colntroll***/
+window.addEventListener('resize', ()=>{
+    sldButton.sizeChange();
+})
+
+
+class sliderButton{
+constructor(parent,buttoncontrol=null){
+  this.parent = parent;
+  this.button = buttoncontrol;
+  this.widndowsSize =0;
+  this.ArrayPosition=this.calcul();
+  this.buttoncontrol();
+}
+
+calcul(){
+let ArrayP=[];
+for(let i =0;i<this.parent.children.length;i++){
+ArrayP.push(this.parent.children[i].getBoundingClientRect().left);
+}
+console.log(ArrayP);
+return ArrayP;
+}
+sizeChange(){
+  this.ArrayPosition=[];
+  this.ArrayPosition = this.calcul();
+}
+buttoncontrol(){
+
+  for(let i =0;i<this.button.children.length;i++){
+    this.button.children[i].addEventListener("click",(e)=>{
+      this.parent.style.marginRight=this.ArrayPosition[i]+"px";
+      
+
+    })
+  }
+}
+
+
+}
+const sldButton = new sliderButton(document.querySelector("#FdBck .FdBckMain .items"),
+                                    document.querySelector("#FdBck .controllButton"));
