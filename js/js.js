@@ -49,6 +49,7 @@ if(e.target.classList[1]=="right"||e.target.classList[0]=="RightArrow"){
 })
 /**slider with button colntroll***/
 window.addEventListener('resize', ()=>{
+  sldButton.rest();
     sldButton.sizeChange();
 })
 
@@ -59,16 +60,28 @@ constructor(parent,buttoncontrol=null){
   this.button = buttoncontrol;
   this.widndowsSize =0;
   this.ArrayPosition=this.calcul();
-  this.buttoncontrol();
+ this.buttoncontrol();
+//  this.makeitemdisplay();
+//  this.displayitem(0);
+  this.position=0;
+  this.rest();
 }
+left(){
+this.parent.style.left="-100px"
 
+}
 calcul(){
 let ArrayP=[];
 for(let i =0;i<this.parent.children.length;i++){
 ArrayP.push(this.parent.children[i].getBoundingClientRect().left);
 }
-console.log(ArrayP);
+
 return ArrayP;
+}
+rest(){
+  this.parent.style.transition="none";
+  this.parent.style.left="0%";
+
 }
 sizeChange(){
   this.ArrayPosition=[];
@@ -78,13 +91,50 @@ buttoncontrol(){
 
   for(let i =0;i<this.button.children.length;i++){
     this.button.children[i].addEventListener("click",(e)=>{
-      this.parent.style.marginRight=this.ArrayPosition[i]+"px";
-      
+        this.parent.style.transition="1s all";
+      this.parent.style.left="-"+this.ArrayPosition[this.button.children [i].getAttribute("class")[0]-1]+"px";
 
     })
   }
 }
+/*makeitemdisplay(){
+  for(let i =0;i<this.parent.children.length;i++){
+    this.parent.children[i].style.display="none";
+  }
+}
+buttoncontrol(){
 
+  for(let i =0;i<this.button.children.length;i++){
+    this.button.children[i].addEventListener("click",(e)=>{
+
+      this.displayitem(this.button.children [i].getAttribute("class")[0]-1);
+
+    })
+  }
+}
+displayitem(position){
+  if(position>this.position){
+          this.makeitemdisplay();
+          this.parent.children[position].style.display="inline-block";
+        this.parent.children[position].style.animation="itemleft 1s";
+this.position = position;
+
+
+  }else if(position<this.position){
+      this.makeitemdisplay();
+    this.parent.children[position].style.display="inline-block";
+  this.parent.children[position].style.animation="itemleft 1s";
+  this.position =  this.position =this.button.children [position].getAttribute("class")[0]-1;
+  console.log("2")
+  }else{
+          this.makeitemdisplay();
+    this.parent.children[position].style.display="inline-block";
+  this.parent.children[position].style.animation="itemleft 1s";
+  this.position =this.button.children [position].getAttribute("class")[0]-1;
+  console.log("3")
+}
+
+}*/
 
 }
 const sldButton = new sliderButton(document.querySelector("#FdBck .FdBckMain .items"),
