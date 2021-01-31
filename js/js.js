@@ -36,17 +36,35 @@
       }
 
 const slid = new slider(document.querySelector("#sectionMain .slider"));
+let drop = true;
+let countDrop =0;
 const leftAroow = document.querySelector("#Arrow .left");
   leftAroow.addEventListener("click",(e)=>{
   if(e.target.classList[1]=="left"||e.target.classList[0]=="LeftArrow"){
     slid.left();
+    countDrop =0;
+    drop="false";
+
   }});
 const rightAroow = document.querySelector("#Arrow .right");
 rightAroow.addEventListener("click",(e)=>{
 if(e.target.classList[1]=="right"||e.target.classList[0]=="RightArrow"){
   slid.left();
+  countDrop =0;
+  drop="false";
 }
 })
+
+setInterval(()=>{
+  if(drop=="true"){
+slid.left();}
+else {
+  if(countDrop==3){
+    drop="true";
+  }
+  countDrop++;
+}
+},5000);
 /**slider with button colntroll***/
 window.addEventListener('resize', ()=>{
   sldButton.rest();
@@ -64,6 +82,7 @@ constructor(parent,buttoncontrol=null){
 //  this.makeitemdisplay();
 //  this.displayitem(0);
   this.position=0;
+  this.restcolorbutton();
   this.rest();
 }
 left(){
@@ -81,6 +100,7 @@ return ArrayP;
 rest(){
   this.parent.style.transition="none";
   this.parent.style.left="0%";
+    this.button.children[0].style.background="var(--main-color)";
 
 }
 sizeChange(){
@@ -93,9 +113,17 @@ buttoncontrol(){
     this.button.children[i].addEventListener("click",(e)=>{
         this.parent.style.transition="1s all";
       this.parent.style.left="-"+this.ArrayPosition[this.button.children [i].getAttribute("class")[0]-1]+"px";
+      this.restcolorbutton();
+      this.button.children[i].style.background ="var(--main-color)";
 
     })
   }
+}
+restcolorbutton(position){
+  for(let i=0;i<this.button.children.length ;i++){
+    this.button.children[i].style.background ="var(--secound-color)";
+  }
+
 }
 /*makeitemdisplay(){
   for(let i =0;i<this.parent.children.length;i++){
