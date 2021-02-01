@@ -15,7 +15,7 @@ input[type=checkbox]{display: none;}
   margin: auto;
 }
 body{
-  height:5500px;
+
   overflow-x: hidden;
 }
 /*button buy*/
@@ -238,6 +238,7 @@ opacity: 0.7;
 #sectionMain {
   height:100vh;
     position: relative;
+
 }
 #sectionMain .sliderShow{
 
@@ -254,7 +255,6 @@ opacity: 0.7;
     white-space: normal;
   position: absolute;
     left:0%;
-
 }
 
 #sectionMain .sliders .backgroundPhoto{
@@ -274,7 +274,6 @@ right:0%;
   left:20%;
   width:60%;
   text-align: center;
-
 }
 #sectionMain .slider .sliders .mainArticle *{
 
@@ -359,7 +358,7 @@ transform: rotate(-45deg);
       /******background id backgroundsectionmain*******/
           #bgrSctShopping{
             width:100%;
-            height: 100vh;
+            height: 400px;
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -386,11 +385,13 @@ transform: rotate(-45deg);
             line-height: 1.4em;
           }
 
-#shoppingsection{ }
+#shoppingsection{margin:1em 0;}
 #shoppingsection .items .item:nth-of-type(1){
-  margin-bottom: 7em;
+  margin: 2em 0;
 }
-
+#shoppingsection .items .item .backgorund .photo{
+  width:80%;
+}
 #shoppingsection .items .item:nth-of-type(1) .backgorund .photo{
   background-image: url("../img/img-1a_960x.webp");
 }
@@ -506,7 +507,7 @@ height:150px;
 width:150px;
 overflow: hidden;
 margin: auto;
-background: red;
+
 
 }
 #FdBck .FdBckMain .items .item .ScPhoto .photo img{
@@ -531,7 +532,7 @@ width:100%;
 /*Fin section feedback*/
 /*sectionvideo**/
 #SectionVideo{
-
+  font-size: 1em;
   background: #212526;
   text-align: center;
   margin:2em 0;
@@ -766,5 +767,103 @@ footer > form button{
 }
 }
 @media (min-width:768px) {
+  /*section sliders***/
+  #sectionMain {
+    height:80vh;
+  }
+  #sectionMain .sliders .backgroundPhoto img{
+    position: absolute;
+  width:auto;
+  height: auto;
+  width: 100%;
+  right:0%;
+  }
+#sectionMain .slider .sliders .mainArticle{
+  left:10%;
+  text-align: left;
+  width:50%;
+}
+#sectionMain .slider .sliders .mainArticle h3:after{
+  content:"";
+  left:30%;
+}
+/*section shoppingsection**/
+  #infoStyle{
+    width:45%;
+  }
+#shoppingsection .items .item {
+  display: flex;
+  justify-content: space-between;
+}
+#shoppingsection .items .item .backgorund{
+  width:45%;
+  height: auto;
+}
+#shoppingsection .items .item .backgorund .photo{
+  width:100%;
+}
+/****section feedback user******/
+#FdBck .FdBckMain .Title > *{
+  margin:0.8em 0;
+}
+#FdBck .FdBckMain .Title{
+  margin-top:2em;
+  text-align: left;
+  width: 50%;
+  transform: translateX(100%);
+}
+#FdBck .FdBckMain .Title span{
+margin:0;
+}
 
+#FdBck .FdBckMain .items .item .ScPhoto{
+  display:inline-block;
+  width: 40%;
+  text-align: center;
+
+transform: translateY(-60%);
+
+}
+#FdBck .FdBckMain .items .item .ScPhoto .photo{
+margin:auto;
+
+}
+#FdBck .FdBckMain .items .item .Ftext{
+  display: inline-block;
+  width:40%;
+
+}
+#FdBck .FdBckMain .items .item .ScPhoto .photo{
+height: 120px;
+width: 120px;
+}
+/*-- section perfrmance--*/
+#SectionPerformance .items .item{
+  width:30%;
+}
+/**section footer*/
+footer{
+  height:70vh;
+  font-size: 1rem;
+
+}
+footer > *{
+  display: block;
+  width:100%;
+  height:auto;
+  padding:0.9em 0em 0em 0em;
+  font-size: 1.3em;
+
+}
+
+}
+@media (min-width:976px) {
+  /*html*/
+  html{
+    font-size: 22px;
+  }
+/**section shoppingsection*/
+#shoppingsection .items .item .backgorund .photo{
+  width: 80%;
+}
 }
