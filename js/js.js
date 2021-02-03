@@ -67,6 +67,7 @@ else {
 },5000);
 /**slider with button colntroll***/
 window.addEventListener('resize', ()=>{
+  sldButton.restcolorbutton();
   sldButton.rest();
     sldButton.sizeChange();
 })
@@ -119,7 +120,7 @@ buttoncontrol(){
     })
   }
 }
-restcolorbutton(position){
+restcolorbutton(){
   for(let i=0;i<this.button.children.length ;i++){
     this.button.children[i].style.background ="var(--secound-color)";
   }
