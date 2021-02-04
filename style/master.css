@@ -40,16 +40,16 @@ body{
   position: relative;
   font-size: 1.4rem;
 }
-#header nav {
+#header .content >nav {
   padding:1em 0.2em;
 }
-#header nav > ul{
+#header .content> nav > ul{
 display: flex;
 justify-content: space-between;
 list-style: none;
 align-items: center;
 }
-#header nav > ul >li:nth-of-type(1) .buttonArrows span{
+#header .content >nav > ul >li:nth-of-type(1) .buttonArrows span{
   display: block;
   height:4px;
   width:30px;
@@ -57,31 +57,31 @@ align-items: center;
   background: var(--secound-color);
   margin:0.2em;
 }
-#header nav >ul >li:nth-of-type(2) h1,#logo h1{
+#header .content> nav >ul >li:nth-of-type(2) h1,#logo h1{
   color:var(--main-color);
   font-size: 2em;
   text-transform: uppercase;
 }
 
-#header nav >ul >li:nth-of-type(2) a,#logo a{
+#header .content >nav >ul >li:nth-of-type(2) a,#logo a{
   color:var(--secound-color);
 }
-#header nav >ul li:nth-of-type(2) a span:not(.header_title),#logo a span:not(.header_title){
+#header .content > nav >ul li:nth-of-type(2) a span:not(.header_title),#logo a span:not(.header_title){
   display: inline-block;
   height:1px;
   width:20px;
   background:var(--main-color);
 }
-#header nav > ul> li:nth-of-type(3) img{
+#header >nav > ul> li:nth-of-type(3) img{
   height:30px;
   width:30px;
   background:var(--secound-color);
 }
 /*for panel item*/
-#header nav > ul >li:nth-child(3) > div img{
+#header .content >nav > ul >li:nth-child(3) > div img{
   cursor: pointer;
 }
-#header nav > ul >li:nth-child(3){
+#header .content >nav > ul >li:nth-child(3){
 
 }
 #itemPanel{
@@ -127,7 +127,7 @@ padding: 0.5em;
 #itemPanel label span:hover{
   color:var(--main-color);
 }
-#header nav > ul >li:nth-child(3) input[id="itemPanelin"]:checked + #itemPanel{
+#header .content> nav > ul >li:nth-child(3) input[id="itemPanelin"]:checked + #itemPanel{
   right:0;
   position: fixed;
   top:0;
@@ -145,11 +145,11 @@ opacity: 1;
   display: flex;
   flex-wrap: nowrap;
   padding: 0;
-  overflow: hidden;
+
   transition: 0.9s all;
 
 }
-#panneuOption:before{
+#panneuOption::before{
   content: "";
   background: black;
   width:60%;
@@ -161,16 +161,16 @@ opacity: 1;
 
 }
 
-#panneuOption ul{
+#panneuOption > ul{
   width:90%;
     height:100vh;
       background: white;
 }
-#panneuOption ul li{
+#panneuOption > ul > li{
   color:var(--secound-color);
   width:100%;
 }
-#panneuOption ul li:hover{
+#panneuOption > ul > li:hover{
   background: #ECECEC;
 }
 #panneuOption ul li a{
@@ -179,22 +179,22 @@ opacity: 1;
     font-size: 1em;
     font-weight: 510;
 }
-#panneuOption ul li a:hover{
+#panneuOption > ul > li > a:hover{
   color:var(--main-color);
 }
-#panneuOption ul hr{
+#panneuOption > ul> hr{
   border:none;
   background:black;
   height: 1px;
   opacity: 0.1;
   width: 100%;
 }
-#panneuOption ul li form{
+#panneuOption ul > li >form{
   width: 100%;
   position: relative;
 }
 
-#panneuOption ul li form input[type="text"]{
+#panneuOption > ul > li > form >input[type="text"]{
   width:90%;
   border:none;
 padding:0.9em 0.5em;
@@ -202,7 +202,7 @@ font-size: 1em;
 font-weight: 100;
 opacity: 0.7;
 }
-#panneuOption ul li form button{
+#panneuOption > ul > li > form > button{
   width:9%;
   height: 100%;
   padding:0.9em 0.5em;
@@ -232,6 +232,9 @@ opacity: 0.7;
 
   opacity:0.3;
 
+}
+#panneuOption > ul > li > div {
+  display: none;
 }
 /*Fin header*/
 /*section main*/
@@ -923,14 +926,40 @@ height:50px;
 width: 800px;
 justify-content: center;
 }
-#panneuOption ul{background: none;}
-#panneuOption ul li:hover{background:none;}
-#panneuOption ul hr{display: none;}
-#panneuOption ul li{display: inline;}
-#panneuOption ul li a{display: inline;}
+#panneuOption::before{
+  content: "";
+  background: none;
+}
+#panneuOption > ul{background: none;}
+#panneuOption > ul >li:hover{background:none;}
+#panneuOption >ul >hr{display: none;}
+#panneuOption >ul >li{display: inline;}
+#panneuOption >ul >li >a{display: inline;}
 
-#panneuOption ul li form{display: none;}
+#panneuOption ul >li >form{display: none;}
 #panneuOption .buttonClose{display: none;}
+          /**menu show for li desktop**/
+          #panneuOption > ul >li{
+            position: relative;
+          }
+            #panneuOption > ul >li:hover >div{
+              display: block;
+            }
+              #panneuOption > ul > li > div >nav > ul >li{
+                display: inline;
+              }
+            #panneuOption > ul > li > div > nav{
+              position: absolute;
+              height:600px;
+              width: 800px;
+              background: white;
+              display: flex;
+              font-size: 0.7em;
+              top:80px;
+              justify-content: space-between;
+              transition: 1s all;
+            }
+
 /**sectionMain**/
 #sectionMain{
   height:100vh;
