@@ -18,6 +18,31 @@ body{
 
   overflow-x: hidden;
 }
+/*LOading pages**/
+.loading{
+  position: fixed;
+width: 100%;
+height: 100%;
+background: white;
+z-index: 99;
+text-align: center;
+}
+.loading img{
+margin: auto;
+
+}
+
+.hiddenLoading{
+  animation: hiddenLoading 1s;
+  animation-fill-mode: forwards;
+  display: none;
+}
+@keyframes hiddenLoading {
+  90%{opacity: 0;}
+  100%{display: none;}
+}
+
+
 /*button buy*/
 .button{
   padding:1em ;
@@ -941,6 +966,7 @@ justify-content: center;
 #panneuOption ul >li >form{display: none;}
 #panneuOption .buttonClose{display: none;}
           /**menu show for li desktop**/
+
           #panneuOption > ul >li{
             position: relative;
           }
@@ -995,6 +1021,7 @@ justify-content: center;
                   width:100%;
                   display: flex;
                   justify-content: space-between;
+                  background: white;
                 }
                 #panneuOption .photoMenu div{
                   width:45%;
@@ -1003,6 +1030,11 @@ justify-content: center;
                 #panneuOption .photoMenu img,#panneuOption .photoMenu img{
                   width:100%;
                 }
+
+/**For select item in ul list**/
+#selected{
+border-bottom: 1px solid var(--main-color);
+}
 
 
 /**sectionMain**/
@@ -1028,6 +1060,14 @@ justify-content: center;
 #shoppingsection .items .item .info *{
 margin:1.5em 0;
 }
-
+/*Footer*/
+footer >*{
+  width: 50%;
+margin: auto;
+}
+footer > form{
+  width: 50%;
+  margin: auto;
+}
 
 }

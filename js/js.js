@@ -168,3 +168,10 @@ this.position = position;
 }
 const sldButton = new sliderButton(document.querySelector("#FdBck .FdBckMain .items"),
                                     document.querySelector("#FdBck .controllButton"));
+
+/**Loding page*/
+
+window.addEventListener("load",()=>{
+  const loading = document.querySelector(".loading")
+  loading.classList +=" hiddenLoading"
+})
