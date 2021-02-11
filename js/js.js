@@ -175,3 +175,30 @@ window.addEventListener("load",()=>{
   const loading = document.querySelector(".loading")
   loading.classList +=" hiddenLoading"
 })
+/*****scrool event********/
+const shoppingsection = document.querySelector("#shoppingsection");
+const InTchDvc = document.querySelector("#InTchDvc");
+const FdBck = document.querySelector("#FdBck");
+const SectionVideo = document.querySelector("#SectionVideo");
+
+
+window.addEventListener('scroll', () =>{
+  if(shoppingsection.getBoundingClientRect().top<window.innerHeight){
+    shoppingsection.style.top="0";
+    shoppingsection.style.opacity="1";
+  }
+
+  if(InTchDvc.getBoundingClientRect().top<window.innerHeight){
+    InTchDvc.style.top="0";
+    InTchDvc.style.opacity="1";
+  }
+
+  if(FdBck.getBoundingClientRect().top<window.innerHeight){
+    FdBck.style.top="0";
+    FdBck.style.opacity="1";
+  }
+  if(SectionVideo.getBoundingClientRect().top<window.innerHeight){
+    SectionVideo.style.top="0";
+    SectionVideo.style.opacity="1";
+  }
+});

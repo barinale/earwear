@@ -1,5 +1,6 @@
 /**foont */
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+
 *{padding:0;margin:0;box-sizing: border-box;
 font-family: 'Yanone Kaffeesatz', sans-serif;;}
 a{text-decoration: none;color:black;}
@@ -18,6 +19,18 @@ body{
 
   overflow-x: hidden;
 }
+/*****event Scrolling****/
+.scrooling{
+  position: relative;
+  opacity: 0;
+  top:200px;
+  transition: 1s all;
+}
+/***SVG****/
+svg{
+  width:25px;
+}
+.cls-1{fill:black;}.cls-2{fill:none;stroke:black;stroke-miterlimit:10;}
 /*LOading pages**/
 .loading{
   position: fixed;
@@ -25,6 +38,7 @@ width: 100%;
 height: 100%;
 background: white;
 z-index: 99;
+
 text-align: center;
 }
 .loading img{
@@ -803,6 +817,10 @@ footer > form button{
 }
 }
 @media (min-width:768px) {
+  /**item panel**/
+  #itemPanel{
+    width:30%;
+  }
   /*section sliders***/
   #sectionMain {
     height:80vh;
@@ -836,7 +854,7 @@ footer > form button{
   height: auto;
 }
 #shoppingsection .items .item .backgorund .photo{
-  width:100%;
+  width:80%;
 }
 /****section feedback user******/
 #FdBck .FdBckMain .Title > *{
@@ -902,6 +920,7 @@ footer > *{
   html{
     font-size: 20px;
   }
+/***/
 
 /**section shoppingsection*/
 #shoppingsection .items .item .backgorund .photo{
@@ -977,15 +996,17 @@ justify-content: center;
             position: relative;
           }
 
-            #panneuOption > ul >li:hover .MenuDesktop{
+
+            #panneuOption > ul >li:hover .MenuDesktop {
               display: block;
               position: absolute;
-              left:0;
+              left:0%;
               top:100%;
 
               animation: affichae 1s;
               animation-fill-mode: forwards;
             }
+
             @keyframes affichae {
               0%{display: block; height:0px;opacity:0;top:350%;left:-200%;}
               100%{height:0;opacity:1;top:100%;left:-200%;}
@@ -1030,6 +1051,8 @@ justify-content: center;
                 #panneuOption .photoMenu img,#panneuOption .photoMenu img{
                   width:100%;
                 }
+
+
 
 /**For select item in ul list**/
 #selected{
