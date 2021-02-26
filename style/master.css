@@ -1,9 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
 
 /**foont */
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
@@ -25,8 +19,12 @@ input:focus{
   width:90%;
   margin: auto;
 }
-body{
-
+html {
+width: 100%;
+  overflow-x: hidden;
+}
+body {
+width: 100%;
   overflow-x: hidden;
 }
 /*****event Scrolling****/
