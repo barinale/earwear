@@ -202,7 +202,7 @@ opacity: 1;
 
 #panneuOption{
   position: fixed;
-  width:30%;
+  width:70%;
   right:-110%;
   top:0;
   z-index:10;
